@@ -1,7 +1,7 @@
 ---
 
 # jenkins variables
-project_name: docker-kanzi
+project_name: docker-koko
 external_type: github_stable
 release_type: stable
 release_tag: latest
@@ -9,14 +9,14 @@ ls_branch: master
 repo_vars:
   - EXT_GIT_BRANCH = 'master'
   - EXT_USER = 'm0ngr31'
-  - EXT_REPO = 'kanzi'
-  - BUILD_VERSION_ARG = 'KANZI_COMMIT'
+  - EXT_REPO = 'koko'
+  - BUILD_VERSION_ARG = 'KOKO_COMMIT'
   - LS_USER = 'linuxserver'
-  - LS_REPO = 'docker-kanzi'
-  - CONTAINER_NAME = 'kanzi'
-  - DOCKERHUB_IMAGE = 'linuxserver/kanzi'
-  - DEV_DOCKERHUB_IMAGE = 'lsiodev/kanzi'
-  - PR_DOCKERHUB_IMAGE = 'lspipepr/kanzi'
+  - LS_REPO = 'docker-koko'
+  - CONTAINER_NAME = 'koko'
+  - DOCKERHUB_IMAGE = 'linuxserver/koko'
+  - DEV_DOCKERHUB_IMAGE = 'lsiodev/koko'
+  - PR_DOCKERHUB_IMAGE = 'lspipepr/koko'
   - DIST_IMAGE = 'ubuntu'
   - MULTIARCH='true'
   - CI='true'

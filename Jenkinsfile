@@ -18,14 +18,14 @@ pipeline {
     GITLAB_NAMESPACE=credentials('gitlab-namespace-id')
     EXT_GIT_BRANCH = 'master'
     EXT_USER = 'm0ngr31'
-    EXT_REPO = 'kanzi'
-    BUILD_VERSION_ARG = 'KANZI_COMMIT'
+    EXT_REPO = 'koko'
+    BUILD_VERSION_ARG = 'KOKO_COMMIT'
     LS_USER = 'linuxserver'
-    LS_REPO = 'docker-kanzi'
-    CONTAINER_NAME = 'kanzi'
-    DOCKERHUB_IMAGE = 'linuxserver/kanzi'
-    DEV_DOCKERHUB_IMAGE = 'lsiodev/kanzi'
-    PR_DOCKERHUB_IMAGE = 'lspipepr/kanzi'
+    LS_REPO = 'docker-koko'
+    CONTAINER_NAME = 'koko'
+    DOCKERHUB_IMAGE = 'linuxserver/koko'
+    DEV_DOCKERHUB_IMAGE = 'lsiodev/koko'
+    PR_DOCKERHUB_IMAGE = 'lspipepr/koko'
     DIST_IMAGE = 'ubuntu'
     MULTIARCH='true'
     CI='true'
@@ -395,16 +395,16 @@ pipeline {
         sh "docker build \
           --label \"org.opencontainers.image.created=${GITHUB_DATE}\" \
           --label \"org.opencontainers.image.authors=linuxserver.io\" \
-          --label \"org.opencontainers.image.url=https://github.com/linuxserver/docker-kanzi/packages\" \
-          --label \"org.opencontainers.image.documentation=https://docs.linuxserver.io/images/docker-kanzi\" \
-          --label \"org.opencontainers.image.source=https://github.com/linuxserver/docker-kanzi\" \
+          --label \"org.opencontainers.image.url=https://github.com/linuxserver/docker-koko/packages\" \
+          --label \"org.opencontainers.image.documentation=https://docs.linuxserver.io/images/docker-koko\" \
+          --label \"org.opencontainers.image.source=https://github.com/linuxserver/docker-koko\" \
           --label \"org.opencontainers.image.version=${EXT_RELEASE_CLEAN}-ls${LS_TAG_NUMBER}\" \
           --label \"org.opencontainers.image.revision=${COMMIT_SHA}\" \
           --label \"org.opencontainers.image.vendor=linuxserver.io\" \
           --label \"org.opencontainers.image.licenses=GPL-3.0-only\" \
           --label \"org.opencontainers.image.ref.name=${COMMIT_SHA}\" \
-          --label \"org.opencontainers.image.title=Kanzi\" \
-          --label \"org.opencontainers.image.description=[Kanzi](https://lexigr.am/), formerly titled Kodi-Alexa, this custom skill is the ultimate voice remote control for navigating Kodi. It can do anything you can think of (100+ intents).  This container also contains lexigram-cli to setup Kanzi with an Amazon Developer Account and automatically deploy it to Amazon.\" \
+          --label \"org.opencontainers.image.title=Koko\" \
+          --label \"org.opencontainers.image.description=[Koko](https://lexigr.am/), formerly titled Kodi-Alexa, this custom skill is the ultimate voice remote control for navigating Kodi. It can do anything you can think of (100+ intents).  This container also contains lexigram-cli to setup Koko with an Amazon Developer Account and automatically deploy it to Amazon.\" \
           --no-cache --pull -t ${IMAGE}:${META_TAG} \
           --build-arg ${BUILD_VERSION_ARG}=${EXT_RELEASE} --build-arg VERSION=\"${VERSION_TAG}\" --build-arg BUILD_DATE=${GITHUB_DATE} ."
       }
@@ -425,16 +425,16 @@ pipeline {
             sh "docker build \
               --label \"org.opencontainers.image.created=${GITHUB_DATE}\" \
               --label \"org.opencontainers.image.authors=linuxserver.io\" \
-              --label \"org.opencontainers.image.url=https://github.com/linuxserver/docker-kanzi/packages\" \
-              --label \"org.opencontainers.image.documentation=https://docs.linuxserver.io/images/docker-kanzi\" \
-              --label \"org.opencontainers.image.source=https://github.com/linuxserver/docker-kanzi\" \
+              --label \"org.opencontainers.image.url=https://github.com/linuxserver/docker-koko/packages\" \
+              --label \"org.opencontainers.image.documentation=https://docs.linuxserver.io/images/docker-koko\" \
+              --label \"org.opencontainers.image.source=https://github.com/linuxserver/docker-koko\" \
               --label \"org.opencontainers.image.version=${EXT_RELEASE_CLEAN}-ls${LS_TAG_NUMBER}\" \
               --label \"org.opencontainers.image.revision=${COMMIT_SHA}\" \
               --label \"org.opencontainers.image.vendor=linuxserver.io\" \
               --label \"org.opencontainers.image.licenses=GPL-3.0-only\" \
               --label \"org.opencontainers.image.ref.name=${COMMIT_SHA}\" \
-              --label \"org.opencontainers.image.title=Kanzi\" \
-              --label \"org.opencontainers.image.description=[Kanzi](https://lexigr.am/), formerly titled Kodi-Alexa, this custom skill is the ultimate voice remote control for navigating Kodi. It can do anything you can think of (100+ intents).  This container also contains lexigram-cli to setup Kanzi with an Amazon Developer Account and automatically deploy it to Amazon.\" \
+              --label \"org.opencontainers.image.title=Koko\" \
+              --label \"org.opencontainers.image.description=[Koko](https://lexigr.am/), formerly titled Kodi-Alexa, this custom skill is the ultimate voice remote control for navigating Kodi. It can do anything you can think of (100+ intents).  This container also contains lexigram-cli to setup Koko with an Amazon Developer Account and automatically deploy it to Amazon.\" \
               --no-cache --pull -t ${IMAGE}:amd64-${META_TAG} \
               --build-arg ${BUILD_VERSION_ARG}=${EXT_RELEASE} --build-arg VERSION=\"${VERSION_TAG}\" --build-arg BUILD_DATE=${GITHUB_DATE} ."
           }
@@ -452,16 +452,16 @@ pipeline {
             sh "docker build \
               --label \"org.opencontainers.image.created=${GITHUB_DATE}\" \
               --label \"org.opencontainers.image.authors=linuxserver.io\" \
-              --label \"org.opencontainers.image.url=https://github.com/linuxserver/docker-kanzi/packages\" \
-              --label \"org.opencontainers.image.documentation=https://docs.linuxserver.io/images/docker-kanzi\" \
-              --label \"org.opencontainers.image.source=https://github.com/linuxserver/docker-kanzi\" \
+              --label \"org.opencontainers.image.url=https://github.com/linuxserver/docker-koko/packages\" \
+              --label \"org.opencontainers.image.documentation=https://docs.linuxserver.io/images/docker-koko\" \
+              --label \"org.opencontainers.image.source=https://github.com/linuxserver/docker-koko\" \
               --label \"org.opencontainers.image.version=${EXT_RELEASE_CLEAN}-ls${LS_TAG_NUMBER}\" \
               --label \"org.opencontainers.image.revision=${COMMIT_SHA}\" \
               --label \"org.opencontainers.image.vendor=linuxserver.io\" \
               --label \"org.opencontainers.image.licenses=GPL-3.0-only\" \
               --label \"org.opencontainers.image.ref.name=${COMMIT_SHA}\" \
-              --label \"org.opencontainers.image.title=Kanzi\" \
-              --label \"org.opencontainers.image.description=[Kanzi](https://lexigr.am/), formerly titled Kodi-Alexa, this custom skill is the ultimate voice remote control for navigating Kodi. It can do anything you can think of (100+ intents).  This container also contains lexigram-cli to setup Kanzi with an Amazon Developer Account and automatically deploy it to Amazon.\" \
+              --label \"org.opencontainers.image.title=Koko\" \
+              --label \"org.opencontainers.image.description=[Koko](https://lexigr.am/), formerly titled Kodi-Alexa, this custom skill is the ultimate voice remote control for navigating Kodi. It can do anything you can think of (100+ intents).  This container also contains lexigram-cli to setup Koko with an Amazon Developer Account and automatically deploy it to Amazon.\" \
               --no-cache --pull -f Dockerfile.armhf -t ${IMAGE}:arm32v7-${META_TAG} \
               --build-arg ${BUILD_VERSION_ARG}=${EXT_RELEASE} --build-arg VERSION=\"${VERSION_TAG}\" --build-arg BUILD_DATE=${GITHUB_DATE} ."
             sh "docker tag ${IMAGE}:arm32v7-${META_TAG} ghcr.io/linuxserver/lsiodev-buildcache:arm32v7-${COMMIT_SHA}-${BUILD_NUMBER}"
@@ -486,16 +486,16 @@ pipeline {
             sh "docker build \
               --label \"org.opencontainers.image.created=${GITHUB_DATE}\" \
               --label \"org.opencontainers.image.authors=linuxserver.io\" \
-              --label \"org.opencontainers.image.url=https://github.com/linuxserver/docker-kanzi/packages\" \
-              --label \"org.opencontainers.image.documentation=https://docs.linuxserver.io/images/docker-kanzi\" \
-              --label \"org.opencontainers.image.source=https://github.com/linuxserver/docker-kanzi\" \
+              --label \"org.opencontainers.image.url=https://github.com/linuxserver/docker-koko/packages\" \
+              --label \"org.opencontainers.image.documentation=https://docs.linuxserver.io/images/docker-koko\" \
+              --label \"org.opencontainers.image.source=https://github.com/linuxserver/docker-koko\" \
               --label \"org.opencontainers.image.version=${EXT_RELEASE_CLEAN}-ls${LS_TAG_NUMBER}\" \
               --label \"org.opencontainers.image.revision=${COMMIT_SHA}\" \
               --label \"org.opencontainers.image.vendor=linuxserver.io\" \
               --label \"org.opencontainers.image.licenses=GPL-3.0-only\" \
               --label \"org.opencontainers.image.ref.name=${COMMIT_SHA}\" \
-              --label \"org.opencontainers.image.title=Kanzi\" \
-              --label \"org.opencontainers.image.description=[Kanzi](https://lexigr.am/), formerly titled Kodi-Alexa, this custom skill is the ultimate voice remote control for navigating Kodi. It can do anything you can think of (100+ intents).  This container also contains lexigram-cli to setup Kanzi with an Amazon Developer Account and automatically deploy it to Amazon.\" \
+              --label \"org.opencontainers.image.title=Koko\" \
+              --label \"org.opencontainers.image.description=[Koko](https://lexigr.am/), formerly titled Kodi-Alexa, this custom skill is the ultimate voice remote control for navigating Kodi. It can do anything you can think of (100+ intents).  This container also contains lexigram-cli to setup Koko with an Amazon Developer Account and automatically deploy it to Amazon.\" \
               --no-cache --pull -f Dockerfile.aarch64 -t ${IMAGE}:arm64v8-${META_TAG} \
               --build-arg ${BUILD_VERSION_ARG}=${EXT_RELEASE} --build-arg VERSION=\"${VERSION_TAG}\" --build-arg BUILD_DATE=${GITHUB_DATE} ."
             sh "docker tag ${IMAGE}:arm64v8-${META_TAG} ghcr.io/linuxserver/lsiodev-buildcache:arm64v8-${COMMIT_SHA}-${BUILD_NUMBER}"

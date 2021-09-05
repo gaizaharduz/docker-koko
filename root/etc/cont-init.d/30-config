@@ -1,8 +1,8 @@
 #!/usr/bin/with-contenv bash
 
 # Copy deployed.txt file to /config
-[[ ! -f /config/deployed-kanzi.txt ]] && \
-    cp /app/kanzi/deployed-kanzi.txt /config/deployed-kanzi.txt
+[[ ! -f /config/deployed-koko.txt ]] && \
+    cp /app/koko/deployed-koko.txt /config/deployed-koko.txt
 
 # Create dummy cli_config
 [[ ! -f /config/cli_config ]] && \
@@ -21,36 +21,36 @@
 	cd /config && \
 	lexigram init-config \
 
-# remove /app/kanzi/kodi.config if exists
-[[ -f /app/kanzi/kodi.config ]] && \
-	rm /app/kanzi/kodi.config
+# remove /app/koko/kodi.config if exists
+[[ -f /app/koko/kodi.config ]] && \
+	rm /app/koko/kodi.config
 
 # Create symlink of kodi.config if doesn't exist
-[[ ! -L /app/kanzi/kodi.config ]] && \
-    ln -s /config/kodi.config /app/kanzi/kodi.config
+[[ ! -L /app/koko/kodi.config ]] && \
+    ln -s /config/kodi.config /app/koko/kodi.config
 
 #Necessary variables
-KANZI_VERSION=$(cat /app/kanzi/version.txt)
-DEPLOYED_VERSION=$(cat /config/deployed-kanzi.txt)
+KOKO_VERSION=$(cat /app/koko/version.txt)
+DEPLOYED_VERSION=$(cat /config/deployed-koko.txt)
 
 # Check for credentials in cli_config
 grep -q token /config/cli_config
 if [ $? != 0 ]
  then
-  echo "Please see the readme at https://github.com/linuxserver/docker-kanzi#application-setup to register your Amazon Developer Account and configure your kodi.config file."
+  echo "Please see the readme at https://github.com/linuxserver/docker-koko#application-setup to register your Amazon Developer Account and configure your kodi.config file."
  else 
   echo "Amazon Developer Account already linked"
-   if [ "${KANZI_VERSION}" = "${DEPLOYED_VERSION}" ]; then
-     echo "${KANZI_VERSION} in this container is the same as the version previously deployed, not redeploying"
+   if [ "${KOKO_VERSION}" = "${DEPLOYED_VERSION}" ]; then
+     echo "${KOKO_VERSION} in this container is the same as the version previously deployed, not redeploying"
     else
-     echo "Either never deployed previously or previous deployed version of Kanzi ${DEPLOYED_VERSION} is different to version ${KANZI_VERSION} in this container, so deploying" && \
-     cd /app/kanzi && \
-     if [ ! -d /app/kanzi/kanzi ]; then
-       lexigram init-skill kanzi
+     echo "Either never deployed previously or previous deployed version of Koko ${DEPLOYED_VERSION} is different to version ${KOKO_VERSION} in this container, so deploying" && \
+     cd /app/koko && \
+     if [ ! -d /app/koko/koko ]; then
+       lexigram init-skill koko
      fi
-     lexigram deploy kanzi --source-dir /app/kanzi --invocation-name ${INVOCATION_NAME} --url ${URL_ENDPOINT} && \
-     echo "${KANZI_VERSION}" > /config/deployed-kanzi.txt && \
-     echo "    Kanzi ${KANZI_VERSION} successfully deployed with invocation name ${INVOCATION_NAME} at ${URL_ENDPOINT}"
+     lexigram deploy koko --source-dir /app/koko --invocation-name ${INVOCATION_NAME} --url ${URL_ENDPOINT} && \
+     echo "${KOKO_VERSION}" > /config/deployed-koko.txt && \
+     echo "    Koko ${KOKO_VERSION} successfully deployed with invocation name ${INVOCATION_NAME} at ${URL_ENDPOINT}"
    fi
 fi
 

@@ -1,0 +1,6 @@
+#!/usr/bin/with-contenv bash
+
+cd /app/koko || exit
+
+exec \
+	s6-setuidgid abc gunicorn -b 0.0.0.0:8000 --certfile /config/keys/koko/certificate.pem --keyfile /config/keys/koko/private-key.pem alexa:app
