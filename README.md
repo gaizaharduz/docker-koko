@@ -38,7 +38,7 @@ Find us at:
 [![Jenkins Build](https://img.shields.io/jenkins/build?labelColor=555555&logoColor=ffffff&style=for-the-badge&jobUrl=https%3A%2F%2Fci.linuxserver.io%2Fjob%2FDocker-Pipeline-Builders%2Fjob%2Fdocker-koko%2Fjob%2Fmaster%2F&logo=jenkins)](https://ci.linuxserver.io/job/Docker-Pipeline-Builders/job/docker-koko/job/master/)
 [![LSIO CI](https://img.shields.io/badge/dynamic/yaml?color=94398d&labelColor=555555&logoColor=ffffff&style=for-the-badge&label=CI&query=CI&url=https%3A%2F%2Fci-tests.linuxserver.io%2Flinuxserver%2Fkoko%2Flatest%2Fci-status.yml)](https://ci-tests.linuxserver.io/linuxserver/koko/latest/index.html)
 
-[Koko](https://lexigr.am/), formerly titled Kodi-Alexa, this custom skill is the ultimate voice remote control for navigating Kodi. It can do anything you can think of (100+ intents).  This container also contains lexigram-cli to setup Koko with an Amazon Developer Account and automatically deploy it to Amazon.
+[Koko](https://lexigr.am/), this skill will allow you to stream the entire audio library you have in Kodi through your Alexa devices. Play any playlist, artist, or song without having to have your TV on!
 
 [![koko](https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/koko.png)](https://lexigr.am/)
 
